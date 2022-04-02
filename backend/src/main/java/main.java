@@ -1,12 +1,15 @@
+
 import model.Users.UserDAO;
 import model.Users.User;
 import model.Users.JpaUserDAO;
+
+import java.util.logging.Level;
 
 
 public class main {
 
     public static void main(String[] args) {
-
+        //java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
 
 
         try (UserDAO uDAO = new JpaUserDAO();) {
@@ -19,7 +22,7 @@ public class main {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println(e.getMessage());
         }
 
     }

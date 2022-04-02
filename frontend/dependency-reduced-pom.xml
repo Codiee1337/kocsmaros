@@ -16,7 +16,7 @@
         <artifactId>javafx-maven-plugin</artifactId>
         <version>0.0.6</version>
         <configuration>
-          <mainClass>hu.unideb.inf.Main</mainClass>
+          <mainClass>Frontend.Main</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -31,7 +31,7 @@
           </execution>
         </executions>
         <configuration>
-          <mainClass>hu.unideb.inf.Main</mainClass>
+          <mainClass>Frontend.Main</mainClass>
         </configuration>
       </plugin>
       <plugin>
@@ -45,7 +45,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <transformers>
                 <transformer>
-                  <mainClass>hu.unideb.inf.Main</mainClass>
+                  <mainClass>Frontend.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -56,7 +56,6 @@
   </build>
   <properties>
     <maven.compiler.target>11</maven.compiler.target>
-    <mainClass>hu.unideb.inf.MainApp</mainClass>
     <maven.compiler.source>11</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
