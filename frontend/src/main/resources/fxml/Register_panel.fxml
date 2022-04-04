@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="42.0" prefWidth="602.0" style="-fx-background-color: #D0B49F;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Regisztráció" textAlignment="CENTER">
+               <font>
+                  <Font name="Kristen ITC" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <PasswordField layoutX="226.0" layoutY="128.0" promptText="Jelszó" />
+      <TextField layoutX="227.0" layoutY="83.0" promptText="Felhasználónév" />
+      <TextField layoutX="227.0" layoutY="174.0" promptText="Email cím" />
+      <TextField layoutX="226.0" layoutY="221.0" promptText="Ivós becenév" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="248.0" layoutY="287.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="103.0" style="-fx-background-color: #0099FF;" text="Regisztráció" textFill="WHITE" />
+      <HBox alignment="CENTER" layoutY="358.0" prefHeight="42.0" prefWidth="602.0" style="-fx-background-color: #D0B49F;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="KocsMáros | 2022" textAlignment="CENTER">
+               <font>
+                  <Font name="Lucida Sans Demibold Italic" size="16.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
