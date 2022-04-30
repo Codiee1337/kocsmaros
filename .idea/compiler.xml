@@ -8,7 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="frontend" />
         <module name="backend" />
-        <module name="UnitTest" />
+        <module name="backendTest" />
       </profile>
     </annotationProcessing>
   </component>
