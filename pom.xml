@@ -36,7 +36,8 @@
           
     
     <module>backend</module>
-      
+      <module>UnitTest</module>
+
   </modules>
 
 </project>
