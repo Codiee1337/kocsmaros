@@ -26,6 +26,17 @@ public class User {
     @Basic
     private java.sql.Timestamp CreatedAt;
 
+    @Basic
+    private String favoritedrinks;
+
+    public String getFavoritedrinks() {
+        return favoritedrinks;
+    }
+
+    public void setFavoritedrinks(String favoritedrinks) {
+        this.favoritedrinks = favoritedrinks;
+    }
+
     public String getUsername() {
         return username;
     }
