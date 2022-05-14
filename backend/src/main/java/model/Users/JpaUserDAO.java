@@ -13,9 +13,12 @@ import java.util.List;
 
 public class JpaUserDAO implements UserDAO {
 
+    //java shit.
     final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("kocsmarosPersistence");
     final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+
+    //Save user to Database.
     @Override
     public void saveUser(User u) {
         entityManager.getTransaction().begin();
@@ -23,6 +26,7 @@ public class JpaUserDAO implements UserDAO {
         entityManager.getTransaction().commit();
     }
 
+    //Remove user from Database.
     @Override
     public void removeUser(User u) {
         entityManager.getTransaction().begin();
@@ -30,6 +34,7 @@ public class JpaUserDAO implements UserDAO {
         entityManager.getTransaction().commit();
     }
 
+    //Update user in Database
     @Override
     public void updateUser(User u) {
         entityManager.getTransaction().begin();
@@ -37,6 +42,7 @@ public class JpaUserDAO implements UserDAO {
         entityManager.getTransaction().commit();
     }
 
+    //Get ALL Users from Database. (GDPR LOL)
     @Override
     public List<User> getUsers() {
         TypedQuery<User> query = entityManager.createQuery(
@@ -45,6 +51,7 @@ public class JpaUserDAO implements UserDAO {
         return users;
     }
 
+    //Login with ID and PW encrypt on backend very unsafe but it works for now.
     @Override
     public User Login(String username, String password) {
         TypedQuery<User> query = entityManager.createQuery(
@@ -60,6 +67,7 @@ public class JpaUserDAO implements UserDAO {
         return u;
     }
 
+    //addFavoriteDrinks (Gets an array that contains all the favorite drinks)
     @Override
     public User addFavoriteDrinks(User u, String[] drinksToAdd){
         JSONObject obj = new JSONObject();
@@ -72,6 +80,7 @@ public class JpaUserDAO implements UserDAO {
         return u;
     }
 
+    //Nulls out the favoriteDrinks attribute of the user.
     @Override
     public User removeFavoriteDrinks(User u){
         u.setFavoritedrinks(String.valueOf(Types.NULL));
@@ -81,15 +90,18 @@ public class JpaUserDAO implements UserDAO {
         return u;
     }
 
+    //Register method w/ username, password, email, name, userLevel.
     @Override
-    public User Register(String username, String password, String email, String name) {
+    public User Register(String username, String password, String email, String name, int userLevel) {
         User u = new User();
         try {
+
             u.setUsername(username);
             u.setPassword(Helper.encryptThisString(password));
             u.setEmail(email);
             u.setName(name);
             u.setCreatedAt(new java.sql.Timestamp(System.currentTimeMillis()));
+            u.setUserLevel(userLevel);
                 entityManager.getTransaction().begin();
                 entityManager.persist(u);
                 entityManager.getTransaction().commit();
@@ -102,7 +114,7 @@ public class JpaUserDAO implements UserDAO {
         }
     }
 
-
+    //java shit.
     @Override
     public void close() throws Exception {
         entityManager.close();

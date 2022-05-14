@@ -54,4 +54,14 @@ public class Kocsma {
     public void setLongitude(Double longitude) {
         Longitude = longitude;
     }
+
+    @Override
+    public String toString() {
+        return "Kocsma{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", Latitude=" + Latitude +
+                ", Longitude=" + Longitude +
+                '}';
+    }
 }
