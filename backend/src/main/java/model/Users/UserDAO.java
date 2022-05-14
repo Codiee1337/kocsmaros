@@ -15,6 +15,7 @@ public interface UserDAO extends AutoCloseable {
 
     User removeFavoriteDrinks(User u);
 
-    public User Register(String username, String password, String email, String name);
+    public User Register(String username, String password, String email, String name, int userLevel);
+
 
 }

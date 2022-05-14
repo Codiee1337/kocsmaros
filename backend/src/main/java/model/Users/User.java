@@ -29,6 +29,17 @@ public class User {
     @Basic
     private String favoritedrinks;
 
+    @Basic
+    private int userLevel;
+
+    public int getUserLevel() {
+        return userLevel;
+    }
+
+    public void setUserLevel(int userLevel) {
+        this.userLevel = userLevel;
+    }
+
     public String getFavoritedrinks() {
         return favoritedrinks;
     }
@@ -103,6 +114,8 @@ public class User {
                 ", email='" + email + '\'' +
                 ", LastLogin=" + LastLogin +
                 ", CreatedAt=" + CreatedAt +
+                ", favoritedrinks='" + favoritedrinks + '\'' +
+                ", userLevel=" + userLevel +
                 '}';
     }
 }

@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 public class JpaKocsmaDAO implements KocsmaDAO {
@@ -42,10 +43,11 @@ public class JpaKocsmaDAO implements KocsmaDAO {
 
     @Override
     public Kocsma getKocsma(int id){
-        TypedQuery<Kocsma> query = entityManager.createQuery(
-                "SELECT k FROM Kocsma Where id = \""+id+"\"", Kocsma.class);
-        Kocsma Kocsma = query.getSingleResult();
-        return Kocsma;
+        TypedQuery<Kocsma> query = entityManager.createQuery("SELECT k FROM Kocsma k WHERE k.id = "+id, Kocsma.class);
+
+
+        Kocsma kocsma = query.getSingleResult();
+        return kocsma;
     }
 
     @Override
