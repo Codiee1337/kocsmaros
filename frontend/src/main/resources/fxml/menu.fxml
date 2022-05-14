@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #D0B49F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #D0B49F;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox prefHeight="600.0" prefWidth="262.0" style="-fx-background-color: #AB6B51;">
          <children>
@@ -30,7 +24,7 @@
                <children>
                   <Button mnemonicParsing="false" prefHeight="53.0" prefWidth="262.0" style="-fx-background-color: #D0B49F;" text="Hol igyak?" GridPane.columnSpan="2" GridPane.rowIndex="1">
                      <font>
-                        <Font name="Kristen ITC" size="25.0" />
+                        <Font name="D050000L" size="25.0" />
                      </font>
                   </Button>
                   <Button alignment="CENTER" layoutX="10.0" layoutY="131.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="262.0" style="-fx-background-color: #e70707;" text="Kilépés" textAlignment="CENTER" textFill="WHITE" GridPane.columnSpan="2" GridPane.rowIndex="5">

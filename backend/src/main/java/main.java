@@ -18,6 +18,9 @@ public class main {
 
             //User u = uDAO.Register("Codiee1337", "P4ssw0rd","bvass18@gmail.com","Vass Tamás Balázs");
             User u = uDAO.Login("Codiee1337","P4ssw0rd");
+
+            uDAO.removeFavoriteDrinks(u);
+
             System.out.println(u.toString());
 
 

@@ -1,12 +1,15 @@
 package model.Users;
 
 import model.Helpers.Helper;
+import org.json.JSONObject;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import java.sql.Types;
 import java.util.List;
+
 
 public class JpaUserDAO implements UserDAO {
 
@@ -52,6 +55,27 @@ public class JpaUserDAO implements UserDAO {
 
 
         u.setLastLogin(new java.sql.Timestamp(System.currentTimeMillis()));
+        entityManager.persist(u);
+        entityManager.getTransaction().commit();
+        return u;
+    }
+
+    @Override
+    public User addFavoriteDrinks(User u, String[] drinksToAdd){
+        JSONObject obj = new JSONObject();
+        obj.put("favoritedrinks",drinksToAdd);
+        u.setFavoritedrinks(obj.toString());
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(u);
+        entityManager.getTransaction().commit();
+        return u;
+    }
+
+    @Override
+    public User removeFavoriteDrinks(User u){
+        u.setFavoritedrinks(String.valueOf(Types.NULL));
+        entityManager.getTransaction().begin();
         entityManager.persist(u);
         entityManager.getTransaction().commit();
         return u;
