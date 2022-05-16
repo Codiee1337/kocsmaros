@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.loginPanelController">
    <children>
       <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -41,22 +41,22 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField promptText="Felhasználónév" GridPane.columnSpan="3">
+                        <TextField fx:id="username" promptText="Felhasználónév" GridPane.columnSpan="3">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </TextField>
-                        <PasswordField promptText="Jelszó" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                        <PasswordField fx:id="password" promptText="Jelszó" GridPane.columnSpan="3" GridPane.rowIndex="1">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </PasswordField>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #0099FF;" text="Belépés" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Button mnemonicParsing="false" onAction="#LoginButton" style="-fx-background-color: #0099FF;" text="Belépés" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" style="-fx-background-color: #2F435A;" text="Regisztráció" textFill="WHITE" GridPane.rowIndex="2">
+                        <Button mnemonicParsing="false" onAction="#RegisterButton" style="-fx-background-color: #2F435A;" text="Regisztráció" textFill="WHITE" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
                            </font>

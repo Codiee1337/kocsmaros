@@ -3,10 +3,13 @@
              xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="kocsmarosPersistence" transaction-type="RESOURCE_LOCAL">
-        <class>model.model.Users.User</class>
+        <class>model.Users.User</class>
+        <class>model.Kocsmak.Kocsma</class>
+        <class>model.Arlista.Arlista</class>
+
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/projektmunka" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://178.48.221.205:3306/projektmunka" />
             <property name="javax.persistence.jdbc.user" value="backend" />
             <property name="javax.persistence.jdbc.password" value="N3mm0nd0mm3g!." />
         </properties>
