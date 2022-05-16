@@ -31,12 +31,11 @@
   
   <modules>
           
-    
-    <module>frontend</module>
+ 
           
     
-    <module>backend</module>
-      <module>UnitTest</module>
+    <module>Application</module>
+   
 
   </modules>
 
