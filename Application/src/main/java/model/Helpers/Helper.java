@@ -1,8 +1,19 @@
 package model.Helpers;
 
+import model.Arlista.Arlista;
+import model.Arlista.ArlistaDAO;
+import model.Arlista.JpaArlistaDAO;
+import model.Kocsmak.JpaKocsmaDAO;
+import model.Kocsmak.Kocsma;
+import model.Kocsmak.KocsmaDAO;
+import model.Product.JpaProductDAO;
+import model.Product.Product;
+import model.Product.ProductDAO;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 public class Helper {
     public static String encryptThisString(String input)
@@ -35,6 +46,28 @@ public class Helper {
         catch (NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void getArlistaByProductName(String productname){
+        ProductDAO pDAO = new JpaProductDAO();
+        Product p = pDAO.getProductByName(productname);
+
+        ArlistaDAO aDAO = new JpaArlistaDAO();
+
+        List<Arlista> Arlistaforcertainproduct = aDAO.getAllProductListingsByProductyId(p.getId());
+
+        KocsmaDAO kDAO = new JpaKocsmaDAO();
+
+        for(Arlista a : Arlistaforcertainproduct){
+            Kocsma k = kDAO.getKocsma(a.getKocsma_id());
+            System.out.println(k.getName()+" kocsmában ennyibe kerül a "+p.getName()+": "+a.getProductprice());
+        }
+
+
+
+
+
+
     }
 
 }

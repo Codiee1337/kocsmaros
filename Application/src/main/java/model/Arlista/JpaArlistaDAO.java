@@ -1,14 +1,11 @@
 package model.Arlista;
 
 
-import model.Kocsmak.Kocsma;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class JpaArlistaDAO implements ArlistaDAO {
 
@@ -50,6 +47,14 @@ public class JpaArlistaDAO implements ArlistaDAO {
 
         List<Arlista> arlistaList = query.getResultList();
         return arlistaList;
+    }
+
+
+
+    @Override
+    public List<Arlista> getAllProductListingsByProductyId(int product_id){
+        TypedQuery<Arlista> query = entityManager.createQuery("Select a FROM Arlista a WHERE a.product_id = "+product_id, Arlista.class);
+        return query.getResultList();
     }
 
     @Override
