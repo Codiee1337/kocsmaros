@@ -38,28 +38,24 @@ public class main extends Application{
         java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
 
 
-        try (UserDAO uDAO = new JpaUserDAO(); KocsmaDAO kDAO = new JpaKocsmaDAO(); ArlistaDAO aDAO = new JpaArlistaDAO();) {
+       // try (KocsmaDAO kDAO = new JpaKocsmaDAO(); ArlistaDAO aDAO = new JpaArlistaDAO();) {
 
-
+            launch();
 
             //User u = uDAO.Register("Codiee1337", "P4ssw0rd","bvass18@gmail.com","Vass Tamás Balázs",1);
-            User u = uDAO.Login("Codiee1337","P4ssw0rd");
 
 
 
 
 
 
-                //launch();
 
 
 
 
 
 
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-        }
+
 
     }
 
