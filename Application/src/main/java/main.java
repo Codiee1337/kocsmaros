@@ -2,20 +2,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.Arlista.Arlista;
-import model.Arlista.ArlistaDAO;
-import model.Arlista.JpaArlistaDAO;
-import model.Kocsmak.Kocsma;
-import model.Kocsmak.JpaKocsmaDAO;
-import model.Kocsmak.KocsmaDAO;
-import model.Users.UserDAO;
-import model.Users.User;
-import model.Users.JpaUserDAO;
+import model.Helpers.Helper;
 
 
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 
 
@@ -40,10 +29,10 @@ public class main extends Application{
 
        // try (KocsmaDAO kDAO = new JpaKocsmaDAO(); ArlistaDAO aDAO = new JpaArlistaDAO();) {
 
-            launch();
+            //launch();
 
             //User u = uDAO.Register("Codiee1337", "P4ssw0rd","bvass18@gmail.com","Vass Tamás Balázs",1);
-
+            Helper.getArlistaByProductName("Royal Vodka");
 
 
 

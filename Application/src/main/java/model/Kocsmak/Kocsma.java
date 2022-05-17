@@ -20,8 +20,17 @@ public class Kocsma {
     @Basic
     private Double Longitude;
 
-    //more to add...
+    @Basic
+    private int admin_id;
 
+
+    public int getAdmin_id() {
+        return admin_id;
+    }
+
+    public void setAdmin_id(int admin_id) {
+        this.admin_id = admin_id;
+    }
 
     public int getId() {
         return id;
@@ -62,6 +71,8 @@ public class Kocsma {
                 ", name='" + name + '\'' +
                 ", Latitude=" + Latitude +
                 ", Longitude=" + Longitude +
+                ", admin_id=" + admin_id +
                 '}';
     }
 }
+

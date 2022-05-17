@@ -13,7 +13,7 @@ public class Arlista {
     private int kocsma_id;
 
     @Basic
-    private String productname;
+    private int product_id;
 
     @Basic
     private int productprice;
@@ -34,12 +34,14 @@ public class Arlista {
         this.kocsma_id = kocsma_id;
     }
 
-    public String getProductname() {
-        return productname;
+    public int getProduct_id() {
+        return product_id;
     }
 
-    public void setProductname(String productname) {
-        this.productname = productname;
+
+
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
     }
 
     public int getProductprice() {
@@ -56,7 +58,7 @@ public class Arlista {
         return "Arlista{" +
                 "id=" + id +
                 ", kocsma_id=" + kocsma_id +
-                ", productname='" + productname + '\'' +
+                ", product_id=" + product_id +
                 ", productprice=" + productprice +
                 '}';
     }

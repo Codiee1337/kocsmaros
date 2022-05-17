@@ -13,6 +13,8 @@ public interface ArlistaDAO extends AutoCloseable {
 
     List<Arlista> getArlistakByKocsmaId(int kocsma_id);
 
+    List<Arlista> getAllProductListingsByProductyId(int product_id);
+
     public Arlista getArlista(int id);
 
 
