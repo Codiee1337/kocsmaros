@@ -1,0 +1,22 @@
+.root {
+-fx-background-image:url('hatter.jpg');
+-fx-background-size:100% 100%;
+}
+
+.buttons
+{
+ -fx-background-color:  #D0B49F;
+	-fx-padding: 0;
+    -fx-border-style: none;
+    -fx-border-width: 0;
+    -fx-border-insets: 0;
+}
+
+.buttons:hover{
+-fx-background-color: #AB6B51;
+}
+
+.button:pressed
+{
+  -fx-background-color: #D0B49F;
+}
