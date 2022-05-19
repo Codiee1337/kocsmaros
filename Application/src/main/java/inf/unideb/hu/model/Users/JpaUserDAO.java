@@ -103,6 +103,7 @@ public class JpaUserDAO implements UserDAO {
         User u = new User();
         try {
             //Esetleg a jövőben kód alapján kocsma regisztráció.
+            //Exception kezelés (username, email, name..)
             u.setUsername(username);
             u.setPassword(Helper.encryptThisString(password));
             u.setEmail(email);

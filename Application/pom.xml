@@ -116,6 +116,8 @@
                 <version>3.0.0-M6</version>
                 <configuration>
                     <test>KocsmaTest</test>
+                    <test>UserTest</test>
+                    <test>ProductTest</test>
                 </configuration>
             </plugin>
             <plugin>
