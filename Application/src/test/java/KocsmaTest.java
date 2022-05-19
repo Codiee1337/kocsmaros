@@ -2,15 +2,21 @@ import inf.unideb.hu.model.Exceptions.Exceptions;
 import inf.unideb.hu.model.Kocsmak.JpaKocsmaDAO;
 import inf.unideb.hu.model.Kocsmak.Kocsma;
 import inf.unideb.hu.model.Kocsmak.KocsmaDAO;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.platform.commons.annotation.Testable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class KocsmaTest {
 
     static Kocsma globalkocsma;
+
     @Test
+    @Order(1)
     public void saveKocsmaTest(){
         Kocsma kocsma = new Kocsma();
         kocsma.setName("savetesztkocsma");
@@ -29,17 +35,28 @@ public class KocsmaTest {
 
 
     @Test
-    public void removeKocsmaTestRight(){
+    @Order(2)
+    public void updateKocsmaTestRight(){
         KocsmaDAO kocsmaDAO = new JpaKocsmaDAO();
-        assertDoesNotThrow(()->kocsmaDAO.removeKocsma(globalkocsma));
-
+        assertDoesNotThrow(()->kocsmaDAO.updateKocsma(globalkocsma));
     }
 
     @Test
-    public void removeKocsmaTestNotRight(){
-        KocsmaDAO kDAO = new JpaKocsmaDAO();
-        assertThrows(Exceptions.KocsmaDoesNotExists.class,()->kDAO.removeKocsma(globalkocsma));
-        ;
+    @Order(3)
+    public void removeKocsmaTestRight(){
+        KocsmaDAO kocsmaDAO = new JpaKocsmaDAO();
+        assertDoesNotThrow(()->kocsmaDAO.removeKocsma(globalkocsma));
     }
+
+    @Test
+    @Order(4)
+    public void updateKocsmaDoesNotTestRight(){
+        KocsmaDAO kocsmaDAO = new JpaKocsmaDAO();
+        assertThrows(Exceptions.KocsmaDoesNotExists.class,()->kocsmaDAO.updateKocsma(globalkocsma));
+    }
+
+
+
+
 
 }

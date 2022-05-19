@@ -11,7 +11,7 @@ public interface KocsmaDAO extends AutoCloseable {
 
     void saveKocsma(Kocsma k);
         void removeKocsma(Kocsma k) throws Exceptions.KocsmaDoesNotExists;
-        void updateKocsma(Kocsma k);
+        void updateKocsma(Kocsma k) throws Exceptions.KocsmaDoesNotExists;
         List<Kocsma> getKocsmak();
         Kocsma getKocsma(int id) throws Exceptions.KocsmaDoesNotExists;
 

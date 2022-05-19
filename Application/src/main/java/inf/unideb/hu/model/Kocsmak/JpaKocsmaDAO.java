@@ -30,8 +30,9 @@ public class JpaKocsmaDAO implements KocsmaDAO {
     }
 
     @Override
-    public void updateKocsma(Kocsma u) {
+    public void updateKocsma(Kocsma u) throws Exceptions.KocsmaDoesNotExists {
         entityManager.getTransaction().begin();
+        getKocsma(u.getId());
         entityManager.persist(u);
         entityManager.getTransaction().commit();
     }
