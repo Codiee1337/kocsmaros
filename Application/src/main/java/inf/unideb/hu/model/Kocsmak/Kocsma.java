@@ -1,6 +1,9 @@
 package inf.unideb.hu.model.Kocsmak;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
+
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 public class Kocsma {
@@ -63,5 +66,6 @@ public class Kocsma {
                 ", Longitude=" + Longitude +
                 '}';
     }
+
 }
 

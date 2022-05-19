@@ -1,11 +1,9 @@
 package inf.unideb.hu.model.Kocsmak;
 
+import inf.unideb.hu.model.Exceptions.Exceptions;
 import inf.unideb.hu.model.Users.User;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.util.List;
 
 import static inf.unideb.hu.main.entityManager;
@@ -21,15 +19,20 @@ public class JpaKocsmaDAO implements KocsmaDAO {
     }
 
     @Override
-    public void removeKocsma(Kocsma u) {
+    public void removeKocsma(Kocsma u) throws Exceptions.KocsmaDoesNotExists {
         entityManager.getTransaction().begin();
+
+        getKocsma(u.getId());
+
         entityManager.remove(u);
+
         entityManager.getTransaction().commit();
     }
 
     @Override
-    public void updateKocsma(Kocsma u) {
+    public void updateKocsma(Kocsma u) throws Exceptions.KocsmaDoesNotExists {
         entityManager.getTransaction().begin();
+        getKocsma(u.getId());
         entityManager.persist(u);
         entityManager.getTransaction().commit();
     }
@@ -43,10 +46,19 @@ public class JpaKocsmaDAO implements KocsmaDAO {
     }
 
     @Override
-    public Kocsma getKocsma(int id){
-        TypedQuery<Kocsma> query = entityManager.createQuery("SELECT k FROM Kocsma k WHERE k.id = "+id, Kocsma.class);
-        Kocsma kocsma = query.getSingleResult();
-        return kocsma;
+    public Kocsma getKocsma(int id) throws Exceptions.KocsmaDoesNotExists {
+        try {
+            TypedQuery<Kocsma> query = entityManager.createQuery("SELECT k FROM Kocsma k WHERE k.id = " + id, Kocsma.class);
+
+
+            Kocsma kocsma = query.getSingleResult();
+            return kocsma;
+        }catch(NoResultException e){
+            throw new Exceptions.KocsmaDoesNotExists();
+        }
+
+
+
     }
 
 

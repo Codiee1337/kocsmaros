@@ -52,7 +52,6 @@ public class main extends Application{
     }
 
     public static void main(String[] args) {
-        java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
 
 
 

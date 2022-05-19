@@ -5,9 +5,10 @@
     <persistence-unit name="kocsmarosPersistence" transaction-type="RESOURCE_LOCAL">
         <class>inf.unideb.hu.model.Users.User</class>
         <class>inf.unideb.hu.model.Arlista.Arlista</class>
+        <class>inf.unideb.hu.model.Kocsmak.Kocsma</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/projektmunka" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://178.48.221.205:3306/projektmunka" />
             <property name="javax.persistence.jdbc.user" value="" />
             <property name="javax.persistence.jdbc.password" value="" />
         </properties>
