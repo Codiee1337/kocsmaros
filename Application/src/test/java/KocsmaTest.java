@@ -16,6 +16,7 @@ public class KocsmaTest {
         testemp.setLongitude((double) 0);
 
 
+
         KocsmaDAO kocsmaDao = new JpaKocsmaDAO();
         kocsmaDao.saveKocsma(testemp);
 
