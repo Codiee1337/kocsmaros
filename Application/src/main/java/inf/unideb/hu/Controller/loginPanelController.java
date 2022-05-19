@@ -53,7 +53,7 @@ public class loginPanelController {
     @FXML
     void RegisterButton(ActionEvent event) throws IOException {
 
-        main.setRoot("register_panel");
+        main.setRoot("Register_panel");
 
 
     }

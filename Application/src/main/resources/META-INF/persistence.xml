@@ -8,9 +8,9 @@
         <class>inf.unideb.hu.model.Kocsmak.Kocsma</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://178.48.221.205:3306/projektmunka" />
-            <property name="javax.persistence.jdbc.user" value="" />
-            <property name="javax.persistence.jdbc.password" value="" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/projektmunka" />
+            <property name="javax.persistence.jdbc.user" value="backend" />
+            <property name="javax.persistence.jdbc.password" value="N3mm0nd0mm3g!." />
         </properties>
     </persistence-unit>
 </persistence>

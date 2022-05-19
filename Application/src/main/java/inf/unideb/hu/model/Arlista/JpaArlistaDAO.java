@@ -29,6 +29,13 @@ public class JpaArlistaDAO implements ArlistaDAO {
         entityManager.getTransaction().commit();
     }
 
+    @Override
+    public List<Arlista> getAllProductListingsByProductId(int product_id){
+        TypedQuery<Arlista> query = entityManager.createQuery("SELECT u FROM Arlista u WHERE product_id="+product_id, Arlista.class);
+
+        return query.getResultList();
+
+    }
 
 
     @Override

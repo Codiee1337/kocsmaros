@@ -14,7 +14,7 @@ import inf.unideb.hu.model.Product.ProductDAO;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
+import java.util.*;
 
 public class Helper {
     public static String encryptThisString(String input)
@@ -49,25 +49,35 @@ public class Helper {
         }
     }
 
-    public static void getArlistaByProductName(String productname) throws Exception {
+    public static void getLegolcsobbArByProductName(String productname){
+        ProductDAO pDAO = new JpaProductDAO();
+        Product p = pDAO.getProductByName(productname);
+
+        ArlistaDAO aDAO = new JpaArlistaDAO();
+
+
+
+    }
+
+    public static String getArlistaByProductName(String productname) throws Exception {
         ProductDAO pDAO = new JpaProductDAO();
         Product p = pDAO.getProductByName(productname);
 
         ArlistaDAO aDAO = new JpaArlistaDAO();
 
         List<Arlista> Arlistaforcertainproduct = null;
-        /*try {
-            //Arlistaforcertainproduct = aDAO.getAllProductListingsByProductId(p.getId());
-        } catch (Exceptions.ArlistaExists e) {
-            e.printStackTrace();
-        }
+        Arlistaforcertainproduct = aDAO.getAllProductListingsByProductId(p.getId());
+
+        Arlista MIN = Arlistaforcertainproduct.stream().min(Comparator.comparing(Arlista::getProductprice)).orElseThrow(NoSuchElementException::new);
+
+
 
         KocsmaDAO kDAO = new JpaKocsmaDAO();
 
-        for(Arlista a : Arlistaforcertainproduct){
-            Kocsma k = kDAO.getKocsma(a.getKocsma_id());
-            System.out.println(k.getName()+" kocsmában ennyibe kerül a "+p.getName()+": "+a.getProductprice());
-        }*/
+
+        Kocsma k = kDAO.getKocsma(MIN.getKocsma_id());
+        return k.getName()+" kocsmában ennyibe kerül a "+p.getName()+": "+MIN.getProductprice();
+
 
 
 

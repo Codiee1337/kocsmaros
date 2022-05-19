@@ -2,12 +2,9 @@ package inf.unideb.hu.model.Arlista;
 
 
 import inf.unideb.hu.model.Product.Product;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 public class Arlista {
@@ -85,6 +82,14 @@ public class Arlista {
                 ", product=" + product +
                 '}';
     }
+
+    public int compareTo(Arlista otherArlista) {
+        return Integer.compare(getProductprice(), otherArlista.getProductprice());
+    }
+
 }
+
+
+
 
 

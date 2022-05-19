@@ -14,6 +14,7 @@ public interface ArlistaDAO extends AutoCloseable {
     void removeArlista(Arlista a);
 
 
+    List<Arlista> getAllProductListingsByProductId(int product_id);
 
     Arlista updateArlista(Arlista a);
     List<Arlista> getArlistak();
