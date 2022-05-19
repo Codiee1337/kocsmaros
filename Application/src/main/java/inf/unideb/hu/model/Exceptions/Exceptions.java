@@ -20,5 +20,11 @@ public class Exceptions {
         }
     }
 
+    public static class KocsmaDoesNotExists extends Exception{
+        public KocsmaDoesNotExists(){
+            super("Nem létezik ssssssez a kocsma!");
+        }
+    }
+
 
 }
